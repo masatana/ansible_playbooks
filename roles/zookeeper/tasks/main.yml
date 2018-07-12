@@ -1,0 +1,32 @@
+---
+
+- name: Install zookeeper packages
+  become: yes
+  yum:
+    name: {{ item }}
+    state: latest
+  with_items:
+     - zookeeper
+     - zookeeper-server
+
+- name: Put zoo.cfg
+  become: yes
+  template:
+    src: zoo.cfg.j2
+    dest: /etc/zookeeper/conf/zoo.cfg
+
+- name: Put myid
+  become: yes
+  template:
+    src: myid.j2
+    dest: /var/lib/zookeeper
+
+- name: Put version-2 directory
+  become: yes
+  become_user: zookeeper
+  file:
+    path: /var/lib/zookeeper/version-2
+    state: directory
+    owner: zookeeper
+    group: zookeeper
+

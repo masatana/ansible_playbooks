@@ -1,0 +1,9 @@
+---
+
+- name: start zookeeper
+  become: yes
+  systemd:
+     name: zookeeper-server
+     state: restarted
+     daemon_reload: yes
+     enabled: no

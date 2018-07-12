@@ -1,0 +1,5 @@
+[zookeeper]
+zookeeper1.local zookeeper_myid=1
+zookeeper2.local zookeeper_myid=2
+zookeeper3.local zookeeper_myid=3
+

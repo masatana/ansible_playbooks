@@ -1,0 +1,5 @@
+---
+
+- name: Stop zookeeper
+  role:
+    - zookeeper_stop

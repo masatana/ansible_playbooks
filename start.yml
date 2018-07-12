@@ -1,0 +1,5 @@
+---
+
+- name: Start zookeeper
+  role:
+    - zookeeper_start
