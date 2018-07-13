@@ -1,0 +1,9 @@
+---
+
+- name: Install haodop-mapreduce-historyserver packages
+  become: yes
+  with_items:
+    - hadoop-mapreduce-historyserver
+  yum:
+    name: "{{ item }}"
+    state: installed

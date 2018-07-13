@@ -1,5 +1,37 @@
 ---
 
-- name: Stop zookeeper
-  role:
+- hosts: hadoop-yarn-nodemanager
+  roles:
+    - hadoop-yarn-nodemanager_stop
+
+- hosts: hadoop-mapreduce-historyserver
+  roles:
+    - hadoop-mapreduce-historyserver_stop
+
+- hosts: hadoop-yarn-resourcemanager-standby
+  roles:
+    - hadoop-yarn-resourcemanager_stop
+
+- hosts: hadoop-yarn-resourcemanager-active
+  roles:
+    - hadoop-yarn-resourcemanager_stop
+
+- hosts: hadoop-hdfs-datanode
+  roles:
+    - hadoop-hdfs-datanode_stop
+
+- hosts: hadoop-hdfs-namenode-standby
+  roles:
+    - hadoop-hdfs-namenode_stop
+
+- hosts: hadoop-hdfs-namenode-active
+  roles:
+    - hadoop-hdfs-namenode_stop
+
+- hosts: hadoop-hdfs-journalnode
+  roles:
+    - hadoop-hdfs-journalnode_stop
+
+- hosts: zookeeper
+  roles:
     - zookeeper_stop

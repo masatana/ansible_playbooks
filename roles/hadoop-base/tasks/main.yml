@@ -1,0 +1,34 @@
+---
+
+- name: Install haodop-base packages
+  become: yes
+  with_items:
+    - hadoop
+    - hadoop-hdfs
+    - hadoop-yarn
+    - hadoop-mapreduce
+  yum:
+    name: "{{ item }}"
+    state: installed
+
+- name: Put configuration files
+  become: yes
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/hadoop/conf/{{ item }}"
+  with_items:
+    - core-site.xml
+    - yarn-site.xml
+    - hdfs-site.xml
+    - mapred-site.xml
+
+- name: Create data directory
+  become: yes
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    group: hadoop
+    mode: "1777"
+  with_items: "{{ hadoop_dir_list }}"
+

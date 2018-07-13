@@ -1,0 +1,8 @@
+
+- name: stop datanode
+  become: yes
+  systemd:
+     name: hadoop-hdfs-datanode
+     state: stopped
+     daemon_reload: yes
+     enabled: no

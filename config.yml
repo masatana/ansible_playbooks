@@ -1,0 +1,43 @@
+---
+
+- hosts: all
+  roles:
+    - cdh
+
+- hosts: zookeeper
+  roles:
+    - java
+    - zookeeper
+
+- hosts: hadoop
+  roles:
+    - java
+    - hadoop-base
+
+- hosts: hadoop-hdfs-journalnode
+  roles:
+    - hadoop-hdfs-journalnode
+
+- hosts: hadoop-hdfs-datanode
+  roles:
+    - hadoop-hdfs-datanode
+
+- hosts: hadoop-hdfs-namenode
+  roles:
+    - hadoop-hdfs-namenode
+
+- hosts: hadoop-client
+  roles:
+    - hadoop-client
+
+- hosts: hadoop-yarn-resourcemanager
+  roles:
+    - hadoop-yarn-resourcemanager
+
+- hosts: hadoop-yarn-nodemanager
+  roles:
+    - hadoop-yarn-nodemanager
+
+- hosts: hadoop-mapreduce-historyserver
+  roles:
+    - hadoop-mapreduce-historyserver

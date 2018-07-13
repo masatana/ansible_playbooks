@@ -1,0 +1,17 @@
+
+- name: start primary namenode
+  become: yes
+  systemd:
+     name: hadoop-hdfs-namenode
+     state: started
+     daemon_reload: yes
+     enabled: no
+
+
+- name: start primary namenode zkfc
+  become: yes
+  systemd:
+     name: hadoop-hdfs-zkfc
+     state: started
+     daemon_reload: yes
+     enabled: no

@@ -1,0 +1,12 @@
+hadoop_dir_list:
+  - '/data'
+  - '/data/1'
+
+dfs_journalnode_edits_dir: '/data/1/dfs/jn'
+dfs_namenode_name_dir_list:
+  - '/data/1/dfs/namenode'
+
+dfs_datanode_data_dir_list:
+  - '/data/1/dfs/datanode'
+
+yarn_app_mapreduce_am_staging_dir: '/user'

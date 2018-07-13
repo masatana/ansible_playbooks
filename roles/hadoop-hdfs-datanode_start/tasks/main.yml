@@ -1,9 +1,8 @@
----
 
-- name: start zookeeper
+- name: start datanode
   become: yes
   systemd:
-     name: zookeeper-server
+     name: hadoop-hdfs-datanode
      state: started
      daemon_reload: yes
      enabled: no

@@ -1,0 +1,6 @@
+---
+
+- name: Create default directories
+  become: yes
+  command: bash /usr/lib/hadoop/libexec/init-hdfs.sh
+

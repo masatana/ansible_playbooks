@@ -1,0 +1,17 @@
+---
+- name: Install haodop-base packages
+  become: yes
+  with_items:
+    - hadoop-kms
+  yum:
+    name: "{{ item }}"
+    state: installed
+
+- name: Put configuration files
+  become: yes
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/hadoop-kms/conf/{{ item }}"
+  with_items:
+    - kms-site.xml
+

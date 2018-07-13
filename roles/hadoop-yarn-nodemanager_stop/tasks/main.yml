@@ -1,0 +1,8 @@
+
+- name: start nodemanager
+  become: yes
+  systemd:
+     name: hadoop-yarn-nodemanager
+     state: stopped
+     daemon_reload: yes
+     enabled: no

@@ -1,0 +1,6 @@
+---
+
+- name: init zkfc
+  become: yes
+  become_user: hdfs
+  command: hdfs zkfc -formatZK

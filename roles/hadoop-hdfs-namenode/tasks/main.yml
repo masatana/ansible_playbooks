@@ -1,0 +1,10 @@
+---
+
+- name: Install haodop-hdfs-namenode adn hadoop-hdfs-zkfc packages
+  become: yes
+  with_items:
+    - hadoop-hdfs-namenode
+    - hadoop-hdfs-zkfc
+  yum:
+    name: "{{ item }}"
+    state: installed

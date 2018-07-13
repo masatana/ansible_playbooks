@@ -4,5 +4,5 @@
   become: yes
   get_url:
     url: "https://archive.cloudera.com/cdh5/redhat/7/x86_64/cdh/cloudera-cdh5.repo"
-    dest: /etc/yum.repo.d
+    dest: /etc/yum.repos.d/cdh.repo
 

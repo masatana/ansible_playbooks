@@ -1,9 +1,8 @@
----
 
-- name: start zookeeper
+- name: start historyserver
   become: yes
   systemd:
-     name: zookeeper-server
+     name: hadoop-mapreduce-historyserver
      state: started
      daemon_reload: yes
      enabled: no

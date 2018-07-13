@@ -1,0 +1,8 @@
+
+- name: stopped resourcemanager
+  become: yes
+  systemd:
+     name: hadoop-yarn-resourcemanager
+     state: stopped
+     daemon_reload: yes
+     enabled: no

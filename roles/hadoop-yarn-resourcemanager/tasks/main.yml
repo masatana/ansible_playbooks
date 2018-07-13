@@ -1,0 +1,9 @@
+---
+
+- name: Install haodop-yarn-resourcemanager
+  become: yes
+  with_items:
+    - hadoop-yarn-resourcemanager
+  yum:
+    name: "{{ item }}"
+    state: installed

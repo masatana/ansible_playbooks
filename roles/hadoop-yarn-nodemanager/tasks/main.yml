@@ -1,0 +1,9 @@
+---
+
+- name: Install haodop-yarn-nodemanager
+  become: yes
+  with_items:
+    - hadoop-yarn-nodemanager
+  yum:
+    name: "{{ item }}"
+    state: installed

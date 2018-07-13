@@ -1,0 +1,8 @@
+
+- name: stop historyserver
+  become: yes
+  systemd:
+     name: hadoop-mapreduce-historyserver
+     state: stopped
+     daemon_reload: yes
+     enabled: no

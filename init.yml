@@ -1,6 +1,53 @@
 ---
 
-- hosts: zookeeper
+#- hosts: hadoop
+#  roles:
+#    - service_disable
+#
+#- hosts: zookeeper
+#  roles:
+#    - zookeeper_start
+#
+#- hosts: hadoop-hdfs-namenode-active
+#  roles:
+#    - hadoop-hdfs-zkfc_init
+#
+#- hosts: hadoop-hdfs-journalnode
+#  roles:
+#    - hadoop-hdfs-journalnode_start
+#
+#- hosts: hadoop-hdfs-namenode-active
+#  roles:
+#    - hadoop-hdfs-namenode_init
+#
+#- hosts: hadoop-hdfs-namenode-active
+#  roles:
+#    - hadoop-hdfs-namenode_start
+#
+#- hosts: hadoop-hdfs-namenode-standby
+#  roles:
+#    - hadoop-hdfs-namenode_bootstrapStandby
+#
+#- hosts: hadoop-hdfs-namenode-standby
+#  roles:
+#    - hadoop-hdfs-namenode_start
+#
+#- hosts: hadoop-hdfs-datanode
+#  roles:
+#    - hadoop-hdfs-datanode_start
+#
+#- hosts: hadoop-client
+#  roles:
+#    - hadoop-hdfs_init
+#
+- hosts: hadoop-yarn-resourcemanager
   roles:
-    - java
-    - zookeeper
+    - hadoop-yarn-resourcemanager_start
+
+- hosts: hadoop-yarn-nodemanager
+  roles:
+    - hadoop-yarn-nodemanager_start
+
+- hosts: hadoop-mapreduce-historyserver
+  roles:
+    - hadoop-mapreduce-historyserver_start

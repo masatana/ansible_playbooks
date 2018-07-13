@@ -1,9 +1,8 @@
----
 
-- name: start zookeeper
+- name: start nodemanager
   become: yes
   systemd:
-     name: zookeeper-server
+     name: hadoop-yarn-nodemanager
      state: started
      daemon_reload: yes
      enabled: no

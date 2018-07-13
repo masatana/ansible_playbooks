@@ -1,0 +1,9 @@
+---
+
+- name: Install haodop-client packages
+  become: yes
+  with_items:
+    - hadoop-client
+  yum:
+    name: "{{ item }}"
+    state: installed

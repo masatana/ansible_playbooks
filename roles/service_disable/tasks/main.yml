@@ -1,0 +1,11 @@
+---
+
+- name: Stop unnesseary services
+  become: yes
+  systemd:
+    name: "{{ item }}"
+    state: stopped
+    daemon_reload: yes
+    enabled: no
+  with_items:
+    - firewalld

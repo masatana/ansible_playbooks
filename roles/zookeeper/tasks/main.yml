@@ -2,12 +2,12 @@
 
 - name: Install zookeeper packages
   become: yes
-  yum:
-    name: {{ item }}
-    state: latest
   with_items:
      - zookeeper
      - zookeeper-server
+  yum:
+    name: "{{ item }}"
+    state: installed
 
 - name: Put zoo.cfg
   become: yes
@@ -19,7 +19,7 @@
   become: yes
   template:
     src: myid.j2
-    dest: /var/lib/zookeeper
+    dest: /var/lib/zookeeper/myid
 
 - name: Put version-2 directory
   become: yes

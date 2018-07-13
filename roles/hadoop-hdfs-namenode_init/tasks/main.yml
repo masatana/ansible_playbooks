@@ -1,0 +1,6 @@
+---
+
+- name: Format HDFS
+  become: yes
+  become_user: hdfs
+  command: hdfs namenode -format

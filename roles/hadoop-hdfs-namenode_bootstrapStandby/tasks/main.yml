@@ -1,0 +1,5 @@
+
+- name: BootStrap HDFS
+  become: yes
+  become_user: hdfs
+  command: hdfs namenode -bootstrapStandby

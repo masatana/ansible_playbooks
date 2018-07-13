@@ -1,0 +1,8 @@
+
+- name: stop journalnode
+  become: yes
+  systemd:
+     name: hadoop-hdfs-journalnode
+     state: stopped
+     daemon_reload: yes
+     enabled: no

@@ -1,5 +1,54 @@
 [zookeeper]
-zookeeper1.local zookeeper_myid=1
-zookeeper2.local zookeeper_myid=2
-zookeeper3.local zookeeper_myid=3
+c7501.ambari.apache.org zookeeper_myid=1
+c7502.ambari.apache.org zookeeper_myid=2
+c7503.ambari.apache.org zookeeper_myid=3
 
+[hadoop:children]
+hadoop-hdfs-journalnode
+hadoop-hdfs-namenode
+hadoop-hdfs-datanode
+hadoop-yarn-resourcemanager
+hadoop-yarn-nodemanager
+hadoop-mapreduce-historyserver
+hadoop-client
+
+[hadoop-hdfs-journalnode]
+c7501.ambari.apache.org 
+c7502.ambari.apache.org 
+c7503.ambari.apache.org 
+
+[hadoop-hdfs-namenode:children]
+hadoop-hdfs-namenode-active
+hadoop-hdfs-namenode-standby
+
+[hadoop-hdfs-namenode-active]
+c7501.ambari.apache.org 
+
+[hadoop-hdfs-namenode-standby]
+c7502.ambari.apache.org 
+
+[hadoop-hdfs-datanode]
+c7501.ambari.apache.org 
+c7502.ambari.apache.org 
+c7503.ambari.apache.org 
+
+[hadoop-yarn-nodemanager]
+c7501.ambari.apache.org 
+c7502.ambari.apache.org 
+c7503.ambari.apache.org 
+
+[hadoop-yarn-resourcemanager:children]
+hadoop-yarn-resourcemanager-active
+hadoop-yarn-resourcemanager-standby
+
+[hadoop-yarn-resourcemanager-active]
+c7501.ambari.apache.org 
+
+[hadoop-yarn-resourcemanager-standby]
+c7502.ambari.apache.org 
+
+[hadoop-mapreduce-historyserver]
+c7503.ambari.apache.org 
+
+[hadoop-client]
+c7503.ambari.apache.org 

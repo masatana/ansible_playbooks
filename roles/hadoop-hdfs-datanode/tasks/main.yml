@@ -1,0 +1,9 @@
+---
+
+- name: Install haodop-hdfs-datanode packages
+  become: yes
+  with_items:
+    - hadoop-hdfs-datanode
+  yum:
+    name: "{{ item }}"
+    state: installed
